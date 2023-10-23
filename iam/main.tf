@@ -3,6 +3,7 @@ data "aws_vpc" "vpc_eks" {
       "Environment" = "staging"
     }
 }
+
 module "allow_eks_access_policy" {
     source = "terraform-aws-modules/iam/aws//modules/iam-policy"
 
@@ -34,7 +35,7 @@ module "eks_admins_iam_role" {
     custom_role_policy_arns = [module.allow_eks_access_policy.arn]
 
     trusted_role_arns = [
-        "arn:aws:iam::${data.vpc_eks.owner_id}:root"
+        "arn:aws:iam::${data.aws_vpc.vpc_eks.owner_id}:root"
     ]
 }
 
