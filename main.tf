@@ -14,3 +14,6 @@ provider "kubernetes" {
     command = "aws"
   }
 }
+module "iam_for_eks" {
+  source = "./iam"
+}
