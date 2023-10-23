@@ -3,7 +3,7 @@ terraform {
     organization = "findnull"
 
     workspaces {
-      name = "Se_EKS_Auth"
+      name = "Set_EKS_Auth"
     }
   }
   required_providers {
