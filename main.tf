@@ -15,5 +15,5 @@ provider "kubernetes" {
   }
 }
 module "iam_for_eks" {
-  source = "iam"
+  source = "./iam"
 }
